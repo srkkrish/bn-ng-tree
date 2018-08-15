@@ -1,0 +1,26 @@
+{
+  "name": "bn-ng-tree-lib",
+  "version": "1.4.0",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "keywords": [
+    "Angular 6 tree component",
+    "Ng tree",
+    "Ng2 tree",
+    "angular tree",
+    "bn ng tree",
+    "tree component",
+    "ng tree component",
+    "angular tree component"
+  ],
+  "description": "Angular 6 stylish and simple tree component based on a JSON",
+  "license": "MIT",
+  "author": "bearnithi",
+  "person": {
+    "name": "nithi",
+    "email": "bearnithi@gmail.com",
+    "url": "http://bearnithi.com"
+  }
+}

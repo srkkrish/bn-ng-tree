@@ -1,0 +1,5 @@
+<ng-container *ngIf="isSearch">
+    <bn-search-box (onChange)="search($event)"></bn-search-box>
+</ng-container>
+
+<bn-tree [isCheckbox]="isCheckbox" [theme]="theme" [items]="items | search: searchkey"></bn-tree>
