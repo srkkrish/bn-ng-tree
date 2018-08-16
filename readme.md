@@ -1,6 +1,7 @@
 ## DESCRIPTION
 
 A simple and stylish **TREE COMPONENT** for Angular 6+. Just send a nested JSON as input, **bn-ng-tree** component will render it as a tree component.
+
 ![BN NG Tree Preview](http://bearnithi.com/bn-ng-tree.gif)
 
 [Live Demo](http://ng.bearnithi.com)
