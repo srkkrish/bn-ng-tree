@@ -1,23 +1,25 @@
-##DESCRIPTION
-A simple and stylish **TREE COMPONENT** for Angular 6+. Just send a nested JSON as input, **bn-ng-tree** component will render it as a tree component.
+## DESCRIPTION
 
+A simple and stylish **TREE COMPONENT** for Angular 6+. Just send a nested JSON as input, **bn-ng-tree** component will render it as a tree component.
 ![BN NG Tree Preview](http://bearnithi.com/bn-ng-tree.gif)
 
-##INSTALLATION
+[Live Demo](http://ng.bearnithi.com)
+
+## INSTALLATION
 ```sh
-npm install bn-ng-tree
+npm install bn-ng-tree-lib
 ```
 
-##BN NG TREE - FEATURES
+## BN NG TREE - FEATURES
 1. [Search](#search-bn-ng-tree).
 2. [Themes](#change-tree-theme).
 3. [Checkbox](#enable-checkbox)
 
-##How to use the bn-tree
-###Import the bn-ng-tree in the module
+## USAGE
+### Import the bn-ng-tree in the module
 
 ```sh
-import { BnNgTreeModule } from 'bn-ng-tree';
+import { BnNgTreeModule } from 'bn-ng-tree-lib';
 ....
 ...
 imports: [
@@ -32,24 +34,24 @@ imports: [
 ```
 It accepts `[items]` as input which is an nested array for the tree.
 
-###Get the Selected Item in Tree Node
+### Get the Selected Item in Tree Node
 `bn-ng-tree` component outputs the onChange event. In the `$event` you will get the selected Object in the tree.    
 
-###Search bn-ng-tree
+### Search bn-ng-tree
 Easily search the entire tree recursively on change and then press enter.
 
 You can enable / disable search option by using `isSearch` input in bn-ng-tree. It accepts boolean. By default search option is enabled.
 
-####Enable Search
+#### Enable Search
 ```sh
 <bn-ng-tree [isSearch]="true" [items]="items" (onChange)="selectedItem($event)"></bn-ng-tree>
 ```
-####Disable Search
+#### Disable Search
 ```sh
 <bn-ng-tree [isSearch]="false" [items]="items" (onChange)="selectedItem($event)"></bn-ng-tree>
 ```
 
-###Change Tree Theme
+### Change Tree Theme
 Bn Ng Tree has built in themes.
 
 1. default
@@ -62,7 +64,7 @@ Bn Ng Tree has built in themes.
 <bn-ng-tree [theme]="'dark'" [isSearch]="false" [items]="items" (onChange)="selectedItem($event)"></bn-ng-tree>
 ```
 
-###Enable Checkbox 
+### Enable Checkbox 
 To enable checkbox, add the `[isCheckbox]` to `true` in the **bn-ng-tree**
 
 ```html
@@ -70,18 +72,18 @@ To enable checkbox, add the `[isCheckbox]` to `true` in the **bn-ng-tree**
      (onChange)="selectedItem($event)" (onChecked)="checkedItems($event)"></bn-ng-tree>
 ```
 
-####Get checked items from Tree
+#### Get checked items from Tree
 
 To get the checked items from the bn-ng-tree, Use **onChecked** output which emits an event everytime a user checks/unchecks a bn-ng-tree item. It returns an array of checked items.
 
-##Sample Code
+## Sample Code
 
-###app.module.ts
+### app.module.ts
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { BnNgTreeModule } from 'bn-ng-tree';
+import { BnNgTreeModule } from 'bn-ng-tree-lib';
 
 @NgModule({
   declarations: [
@@ -99,7 +101,7 @@ export class AppModule { }
 ```
 
 
-###app.component.html
+### app.component.html
 ```html
 <section class="tree-container">
   <h2>Angular 6 Tree Component</h2>
@@ -120,7 +122,7 @@ export class AppModule { }
 
 ```
 
-###app.component.ts
+### app.component.ts
 ```typescript
 import { Component } from '@angular/core';
 
