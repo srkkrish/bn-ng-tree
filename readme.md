@@ -219,7 +219,7 @@ export class AppComponent {
 
 ```
 
-##VERSIONING
+## VERSIONING
 
 1.4.0 - Checkbox option for Angular Tree
 
