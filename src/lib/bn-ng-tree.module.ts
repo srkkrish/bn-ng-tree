@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BnNgTreeComponent } from './bn-ng-tree.component';
 import { CommonModule } from '@angular/common';
-import { BnNgTreeService } from './bn-ng-tree.service';
+import { BnNgTreeService } from './services/bn-ng-tree.service';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { FormsModule } from '@angular/forms';
-import { SearchPipe } from './search.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 import { TreeComponent } from './tree/tree.component';
 
 @NgModule({

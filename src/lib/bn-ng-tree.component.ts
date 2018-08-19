@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BnNgTreeService } from './bn-ng-tree.service';
+import { BnNgTreeService } from './services/bn-ng-tree.service';
 import { Observable } from 'rxjs/internal/Observable';
 
 
