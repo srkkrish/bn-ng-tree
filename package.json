@@ -1,6 +1,6 @@
 {
   "name": "bn-ng-tree-lib",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
@@ -22,5 +22,15 @@
     "name": "nithi",
     "email": "bearnithi@gmail.com",
     "url": "http://bearnithi.com"
+  },
+  "homepage": "http://ng.bearnithi.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bearnithi/bn-ng-tree.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bearnithi/bn-ng-tree/issues",
+    "email": "bearnithi@gmail.com"
   }
+
 }

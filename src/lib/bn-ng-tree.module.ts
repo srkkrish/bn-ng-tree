@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BnNgTreeComponent } from './bn-ng-tree.component';
 import { CommonModule } from '@angular/common';
-import { BnNgTreeService } from './bn-ng-tree.service';
+import { BnNgTreeService } from './services/bn-ng-tree.service';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { FormsModule } from '@angular/forms';
-import { SearchPipe } from './search.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 import { TreeComponent } from './tree/tree.component';
+import { EditBoxComponent } from './edit-box/edit-box.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { TreeComponent } from './tree/tree.component';
   providers: [
     BnNgTreeService
   ],
-  declarations: [BnNgTreeComponent, SearchBoxComponent, SearchPipe, TreeComponent],
+  declarations: [BnNgTreeComponent, SearchBoxComponent, SearchPipe, TreeComponent, EditBoxComponent],
   exports: [BnNgTreeComponent]
 })
 export class BnNgTreeModule { }

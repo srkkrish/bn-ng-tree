@@ -221,6 +221,8 @@ export class AppComponent {
 
 ## VERSIONING
 
+1.4.1 - Bug Fixes, Documentation Updated.
+
 1.4.0 - Checkbox option for Angular Tree
 
 1.3.0 - Theme option for tree

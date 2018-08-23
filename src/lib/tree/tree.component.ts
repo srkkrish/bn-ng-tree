@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { BnNgTreeService } from '../bn-ng-tree.service';
+import { BnNgTreeService } from '../services/bn-ng-tree.service';
 
 @Component({
   selector: 'bn-tree',
@@ -44,5 +44,30 @@ export class TreeComponent implements OnInit {
       } else {
         this.treeService.removeCheckedItem(item);
       }
+    }
+
+    isChildExists(item) {
+      if(item.children) {
+        if(item.children.length > 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      return false;
+    }
+
+    allowEdit(item,e) {
+      e.stopPropagation();
+      if(item.edit) {
+        item.edit = !item.edit;
+      } else {
+        item.edit = true;
+      }
+    }
+
+    edited(item) {
+      item.edit = false;
     }
 }
