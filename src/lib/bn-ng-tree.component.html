@@ -1,5 +1,13 @@
-<ng-container *ngIf="isSearch">
+<div (click)="hideContextMenu()" class="position-relative">
+  <ng-container *ngIf="isSearch">
     <bn-search-box (onChange)="search($event)"></bn-search-box>
-</ng-container>
+  </ng-container>
 
-<bn-tree [isCheckbox]="isCheckbox" [theme]="theme" [items]="items | search: searchkey"></bn-tree>
+  <bn-tree [isCheckbox]="isCheckbox" [theme]="theme" [items]="items | search: searchkey"></bn-tree>
+  
+  <ng-container *ngIf="enableContextMenu">
+    <bn-context-menu [showContextMenu]="showContextMenu" (onContextClick)="onContextClick($event)"
+     [menu]="contextMenu"></bn-context-menu>
+  </ng-container>
+
+</div>

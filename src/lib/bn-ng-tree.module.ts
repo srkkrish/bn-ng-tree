@@ -6,17 +6,18 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './pipes/search.pipe';
 import { TreeComponent } from './tree/tree.component';
-import { EditBoxComponent } from './edit-box/edit-box.component';
+import { ContextMenuModule } from '../../../context-menu/src/public_api';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ContextMenuModule
   ],
   providers: [
     BnNgTreeService
   ],
-  declarations: [BnNgTreeComponent, SearchBoxComponent, SearchPipe, TreeComponent, EditBoxComponent],
+  declarations: [BnNgTreeComponent, SearchBoxComponent, SearchPipe, TreeComponent],
   exports: [BnNgTreeComponent]
 })
 export class BnNgTreeModule { }

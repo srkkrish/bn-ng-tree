@@ -13,61 +13,58 @@ export class TreeComponent implements OnInit {
 
   constructor(private treeService: BnNgTreeService) { }
 
-    ngOnInit() {
-     
-    }
-  
-    onexpand(item, e) {
-      
-      if (item.expanded) {
-        item.expanded = !item.expanded;
-        return;
-      } else {
-        if (item.children) {
-          if (item.children.length > 0) {
-            item.expanded = true;
-          } else {
-            item.expanded = false;
-          }
-        }
-      }
-    }
-  
-    go(item,e) {
-      e.stopPropagation();
-      this.treeService.setSelectedItem(item);
-    }
+  ngOnInit() {
 
-    onCheck(item) {
-      if(item.checked) {
-        this.treeService.addCheckedItem(item);
-      } else {
-        this.treeService.removeCheckedItem(item);
-      }
-    }
+  }
 
-    isChildExists(item) {
-      if(item.children) {
-        if(item.children.length > 0) {
-          return true;
+  onexpand(item, e) {
+
+    if (item.expanded) {
+      item.expanded = !item.expanded;
+      return;
+    } else {
+      if (item.children) {
+        if (item.children.length > 0) {
+          item.expanded = true;
         } else {
-          return false;
+          item.expanded = false;
         }
       }
-
-      return false;
     }
+  }
 
-    allowEdit(item,e) {
-      e.stopPropagation();
-      if(item.edit) {
-        item.edit = !item.edit;
+  go(item, e) {
+    e.stopPropagation();
+    this.treeService.setSelectedItem(item);
+  }
+
+  onCheck(item) {
+    if (item.checked) {
+      this.treeService.addCheckedItem(item);
+    } else {
+      this.treeService.removeCheckedItem(item);
+    }
+  }
+
+  isChildExists(item) {
+    if (item.children) {
+      if (item.children.length > 0) {
+        return true;
       } else {
-        item.edit = true;
+        return false;
       }
     }
 
-    edited(item) {
-      item.edit = false;
+    return false;
+  }
+
+  triggerContextMenu(item,e) {
+    console.log(e);
+    let data = {
+      event: e,
+      data: item
     }
+    this.treeService.setContextMenuItem(data);
+  }
+
 }

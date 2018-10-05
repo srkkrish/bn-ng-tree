@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -8,6 +8,8 @@ import { Observable } from "rxjs";
 export class BnNgTreeService {
   selectedItem = new BehaviorSubject<any>(false);
   checkedItemsSub = new BehaviorSubject<any>(false);
+
+  contextMenuItem = new Subject<any>();
 
   callSelectedItem$ = this.selectedItem.asObservable();
   callCheckedItems$ = this.checkedItemsSub.asObservable();
@@ -18,6 +20,10 @@ export class BnNgTreeService {
 
   setSelectedItem(item): void {
     this.selectedItem.next(item);
+  }
+
+  setContextMenuItem(item): void {
+    this.contextMenuItem.next(item);
   }
 
   setInitialCheckedItems(allItems) {
@@ -52,5 +58,23 @@ export class BnNgTreeService {
       this.checkedItems.splice(checkedItemIndex,1);
       this.checkedItemsSub.next(true);
     }
+  }
+
+  removeItem(removableNode,allNode): void {
+    let removeNode =(items) => {
+      items.forEach((item) => {
+        let removableNodeIndex =items.indexOf(removableNode);
+        if(removableNodeIndex > -1) {
+          items.splice(removableNodeIndex,1);
+        }
+        if(item.children) {
+          if(item.children.length > 0) {
+            removeNode(item.children);
+          }
+        }
+      });
+    }
+
+    removeNode(allNode);
   }
 }

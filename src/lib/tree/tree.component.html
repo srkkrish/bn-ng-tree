@@ -6,13 +6,10 @@
        <label for="{{ i + item.name }}" class="systems-checkbox__label"></label>
      </span>
 
-    <div class="systems__apps" (click)="onexpand(item, $event)">
+    <div class="systems__apps" (contextmenu)="triggerContextMenu(item, $event)" (click)="onexpand(item, $event)">
         <span class="systems__icon" *ngIf="!item.expanded && isChildExists(item)"><i class="fa fa-folder"></i></span>
         <span class="systems__icon" *ngIf="item.expanded"><i class="fa fa-folder-open"></i></span>
-        <span [hidden]="item.edit" (dblclick)="allowEdit(item, $event)" class="systems__name" > {{ item.name }} </span>
-        <span [hidden]="!item.edit" class="system__name">
-          <bn-edit-box (edited)="edited($event)" [node]="item"></bn-edit-box>
-        </span>
+        <span class="systems__name" > {{ item.name }} </span>
 
         <span class="systems__go" (click)="go(item,$event)"><i class="fa fa-arrow-right"></i></span>
         
