@@ -6,7 +6,7 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './pipes/search.pipe';
 import { TreeComponent } from './tree/tree.component';
-import { ContextMenuModule } from '../../../context-menu/src/public_api';
+import { ContextMenuModule } from '../../../bn-ng-context-menu/src/public_api';
 
 @NgModule({
   imports: [
